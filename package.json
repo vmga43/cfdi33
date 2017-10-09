@@ -1,0 +1,19 @@
+{
+  "name": "cfdiv33",
+  "version": "1.0.0",
+  "description": "Library to create xml (cfdi) v3.3",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jxon": "^2.0.0-beta.5",
+    "xsltproc": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cesar Aguilera",
+  "license": "MIT"
+}
