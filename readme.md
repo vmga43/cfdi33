@@ -42,8 +42,8 @@ const cfdi = new CFDI({
   'LugarExpedicion': '45079',
 });
 
-cfdi.cer = './tests/resources/aaa010101aaa_FIEL.cer.pem'
-cfdi.key = './tests/resources/Claveprivada_FIEL_AAA010101AAA_20170515_120909.key.pem'
+cfdi.cer = './test/resources/aaa010101aaa_FIEL.cer.pem'
+cfdi.key = './test/resources/Claveprivada_FIEL_AAA010101AAA_20170515_120909.key.pem'
 
 cfdi.add(new CfdiRelacionado({
   'UUID': 'A39DA66B-52CA-49E3-879B-5C05185B0EF7'
