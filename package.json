@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Library to create xml (cfdi) v3.3",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blacktrue/nodejs-cfdiv33.git"
+  },
   "directories": {
     "test": "tests"
   },
