@@ -7,6 +7,8 @@ const Concepto = require('./lib/Node/Concepto')
 const CfdiRelacionado = require('./lib/Node/CfdiRelacionado')
 const Traslado = require('./lib/Node/Impuesto/Traslado')
 const Retencion = require('./lib/Node/Impuesto/Retencion')
+const CuentaPredial = require('./lib/Node/CuentaPredial')
+const InformacionAduanera = require('./lib/Node/InformacionAduanera')
 
 module.exports = {
   CFDI,
@@ -15,5 +17,7 @@ module.exports = {
   Concepto,
   CfdiRelacionado,
   Traslado,
-  Retencion
+  Retencion,
+  CuentaPredial,
+  InformacionAduanera
 };
