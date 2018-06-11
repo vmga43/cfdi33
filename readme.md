@@ -27,124 +27,80 @@ const Traslado = require('cfdiv33').Traslado
 const Retencion = require('cfdiv33').Retencion
 
 const cfdi = new CFDI({
-  'Serie': 'A',
-  'Folio': '167ABC',
-  'Fecha': '2017-01-05T09:09:23',
-  'Sello': '',
-  'NoCertificado': '20001000000200001428',
-  'Certificado': '',
+  //'Serie': 'A',
+  //'Folio': '167ABC',
+  'Fecha': '2018-06-11T08:09:23',
+  'NoCertificado': '20001000000300022815',
   'SubTotal': '1000',
   'Moneda': 'MXN',
-  'Total': '1500',
+  'Total': '1160',
   'TipoDeComprobante': 'I',
   'FormaPago': '01',
   'MetodoPago': 'PUE',
-  'CondicionesDePago': 'CONDICIONES',
-  'Descuento': '0.00',
-  'TipoCambio': '1.0',
+  //'CondicionesDePago': 'CONDICIONES',
+  'TipoCambio': '1',
   'LugarExpedicion': '45079',
 });
 
-cfdi.cer = './test/resources/aaa010101aaa_FIEL.cer.pem'
-cfdi.key = './test/resources/Claveprivada_FIEL_AAA010101AAA_20170515_120909.key.pem'
+cfdi.cer = './test/resources/LAN7008173R5.cer.pem'
+cfdi.key = './test/resources/LAN7008173R5.key.pem'
+cfdi.withOutCerts = false
 
+/*
 cfdi.add(new CfdiRelacionado({
   'UUID': 'A39DA66B-52CA-49E3-879B-5C05185B0EF7'
 }, {
   'TipoRelacion': '01'
 }))
+*/
 
-cfdi.add(new CfdiRelacionado({
-  'UUID': 'A39DA66B-52CA-49E3-879B-5C05185B0EF7'
-}, {
-  'TipoRelacion': '01'
-}))
 
 cfdi.add(new Emisor({
-  'Rfc': 'AUAC920422D38',
+  'Rfc': 'LAN7008173R5',
   'Nombre': 'CESAR RENE AGUILERA ARREOLA',
   'RegimenFiscal': '601'
 }))
 
 cfdi.add(new Receptor({
   'Rfc': 'HEPR930322977',
-  'Nombre': 'RAFAEL ALEJANDRO HERNÁNDEZ PALACIOS',
-  'ResidenciaFiscal': 'MEX',
-  'NumRegIdTrib': '0000000000000',
+  //'Nombre': 'RAFAEL ALEJANDRO HERNÁNDEZ PALACIOS',
+  //'ResidenciaFiscal': 'MEX',
+  //'NumRegIdTrib': '0000000000000',
   'UsoCFDI': 'G01'
-}))
-
-cfdi.add(new Concepto({
-  'ClaveProdServ': '01010101',
-  'ClaveUnidad': 'F52',
-  'NoIdentificacion': '00001',
-  'Cantidad': '1.5',
-  'Unidad': 'TONELADA',
-  'Descripcion': 'ACERO',
-  'ValorUnitario': '1500000',
-  'Importe': '2250000'
 }))
 
 const concepto = new Concepto({
   'ClaveProdServ': '01010101',
   'ClaveUnidad': 'F52',
   'NoIdentificacion': '00001',
-  'Cantidad': '1.5',
+  'Cantidad': '1',
   'Unidad': 'TONELADA',
   'Descripcion': 'ACERO',
-  'ValorUnitario': '1500000',
-  'Importe': '2250000'
+  'ValorUnitario': '1000',
+  'Importe': '1000'
 })
 
 concepto.add(new Traslado({
-  'Base': '17000',
-  'Impuesto': '001',
+  'Base': '1000',
+  'Impuesto': '002',
   'TipoFactor': 'Tasa',
-  'TasaOCuota': '0.530000',
-  'Importe': '2720'
-}))
-
-concepto.add(new Retencion({
-  'Impuesto': '001',
-  'Importe': '2720'
-}))
-
-concepto.add(new CuentaPredial({
-  'Numero': 'AA0017'
-}))
-
-concepto.add(new InformacionAduanera({
-  'NumeroPedimento': '1000-0000-123123-00'
+  'TasaOCuota': '0.16',
+  'Importe': '160'
 }))
 
 cfdi.add(concepto)
 
-cfdi.add(new Retencion({
-  'Impuesto': '001',
-  'Importe': '2720'
-}, {}, {
-  'TotalImpuestosRetenidos': '100.50'
-}))
-
-
 cfdi.add(new Traslado({
-  'Base': '17000',
-  'Impuesto': '001',
+  'Impuesto': '002',
   'TipoFactor': 'Tasa',
-  'TasaOCuota': '0.530000',
-  'Importe': '2720'
+  'TasaOCuota': '0.16',
+  'Importe': '160'
 }, {}, {
-  'TotalImpuestosTrasladados': '100.50'
+  'TotalImpuestosTrasladados': '160.00'
 }))
 
-console.log(cfdi.getXml())
-
-cfdi.getCadenaOriginal()
-.then(data => {
-  console.log('OK' + data)
-})
-.catch(err => {
-  console.log('ERR' + err)
-})
+cfdi.getXml()
+.then(xml => console.log(xml))
+.catch(e => console.log(e.toString(), '---> error'));
 
 ```
