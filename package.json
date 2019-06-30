@@ -1,27 +1,62 @@
 {
-  "name": "cfdiv33",
-  "version": "2.1.0",
-  "description": "Library to create xml (cfdi) v3.3",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/blacktrue/nodejs-cfdiv33.git"
+  "_from": "cfdiv33",
+  "_id": "cfdiv33@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-9pxMAmTn3Ubd1v/lxqFRzQVd56Lv4MAv83+K70CJDllVdeQAoCB5KR3neh7UavNG3qhmN1qKOQjwwnrvkY8lqw==",
+  "_location": "/cfdiv33",
+  "_phantomChildren": {},
+  "_requested": {
+    "escapedName": "cfdiv33",
+    "fetchSpec": "latest",
+    "name": "cfdiv33",
+    "raw": "cfdiv33",
+    "rawSpec": "",
+    "registry": true,
+    "saveSpec": null,
+    "type": "tag"
   },
-  "directories": {
-    "test": "tests"
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cfdiv33/-/cfdiv33-2.1.0.tgz",
+  "_shasum": "a69d16bc8cd35bb7fdac7445e17473a5ac06ec6a",
+  "_spec": "cfdiv33",
+  "_where": "D:\\OTECNO\\WEB\\APACHE\\htdocs\\admify_mongo",
+  "author": {
+    "name": "Cesar Aguilera"
   },
+  "bugs": {
+    "url": "https://github.com/blacktrue/nodejs-cfdiv33/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "crypto": "^1.0.1",
     "jxon": "^2.0.0-beta.5",
     "xsltproc": "^0.0.3"
   },
+  "deprecated": false,
+  "description": "Library to create xml (cfdi) v3.3",
   "devDependencies": {
-    "mocha": "^4.0.1",
-    "chai": "^4.1.2"
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "homepage": "https://github.com/blacktrue/nodejs-cfdiv33#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "cfdiv33",
+  "optionalDependencies": {},
+  "readme": "## cfdiv33\n\n[![Build Status](https://travis-ci.org/blacktrue/nodejs-cfdiv33.svg?branch=develop)](https://travis-ci.org/blacktrue/nodejs-cfdiv33)\n\n\nGenera un XML CFDI v3.3\n\n## Instalación \n\n```\nnpm install cfdiv33 --save\n```\n\n## Ejemplo de uso\n\n```javascript\n'use strict'\n\nconst CFDI = require('cfdiv33').CFDI\nconst Emisor = require('cfdiv33').Emisor\nconst Receptor = require('cfdiv33').Receptor\nconst Concepto = require('cfdiv33').Concepto\nconst CuentaPredial = require('cfdiv33').CuentaPredial\nconst InformacionAduanera = require('cfdiv33').InformacionAduanera\nconst CfdiRelacionado = require('cfdiv33').CfdiRelacionado\nconst Traslado = require('cfdiv33').Traslado\nconst Retencion = require('cfdiv33').Retencion\n\nconst cfdi = new CFDI({\n  //'Serie': 'A',\n  //'Folio': '167ABC',\n  'Fecha': '2018-06-11T08:09:23',\n  'NoCertificado': '20001000000300022815',\n  'SubTotal': '1000',\n  'Moneda': 'MXN',\n  'Total': '1160',\n  'TipoDeComprobante': 'I',\n  'FormaPago': '01',\n  'MetodoPago': 'PUE',\n  //'CondicionesDePago': 'CONDICIONES',\n  'TipoCambio': '1',\n  'LugarExpedicion': '45079',\n});\n\ncfdi.cer = './test/resources/LAN7008173R5.cer.pem'\ncfdi.key = './test/resources/LAN7008173R5.key.pem'\ncfdi.withOutCerts = false\n\n/*\ncfdi.add(new CfdiRelacionado({\n  'UUID': 'A39DA66B-52CA-49E3-879B-5C05185B0EF7'\n}, {\n  'TipoRelacion': '01'\n}))\n*/\n\n\ncfdi.add(new Emisor({\n  'Rfc': 'LAN7008173R5',\n  'Nombre': 'CESAR RENE AGUILERA ARREOLA',\n  'RegimenFiscal': '601'\n}))\n\ncfdi.add(new Receptor({\n  'Rfc': 'HEPR930322977',\n  //'Nombre': 'RAFAEL ALEJANDRO HERNÁNDEZ PALACIOS',\n  //'ResidenciaFiscal': 'MEX',\n  //'NumRegIdTrib': '0000000000000',\n  'UsoCFDI': 'G01'\n}))\n\nconst concepto = new Concepto({\n  'ClaveProdServ': '01010101',\n  'ClaveUnidad': 'F52',\n  'NoIdentificacion': '00001',\n  'Cantidad': '1',\n  'Unidad': 'TONELADA',\n  'Descripcion': 'ACERO',\n  'ValorUnitario': '1000',\n  'Importe': '1000'\n})\n\nconcepto.add(new Traslado({\n  'Base': '1000',\n  'Impuesto': '002',\n  'TipoFactor': 'Tasa',\n  'TasaOCuota': '0.16',\n  'Importe': '160'\n}))\n\ncfdi.add(concepto)\n\ncfdi.add(new Traslado({\n  'Impuesto': '002',\n  'TipoFactor': 'Tasa',\n  'TasaOCuota': '0.16',\n  'Importe': '160'\n}, {}, {\n  'TotalImpuestosTrasladados': '160.00'\n}))\n\ncfdi.getXml()\n.then(xml => console.log(xml))\n.catch(e => console.log(e.toString(), '---> error'));\n\n```",
+  "readmeFilename": "readme.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blacktrue/nodejs-cfdiv33.git"
   },
   "scripts": {
     "test": "mocha"
   },
-  "author": "Cesar Aguilera",
-  "license": "MIT"
+  "version": "2.1.0"
 }

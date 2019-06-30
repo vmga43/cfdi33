@@ -335,10 +335,13 @@
 	
 	<!-- MANEJA NODOS TIPO Pago10 -->
 	<xsl:template match="pago10:Pagos">
+		<!-- Manejador de Atributos Pagos -->
 		<xsl:call-template name="Requerido">
 			<xsl:with-param name="valor" select="./@Version"/>
 		</xsl:call-template>
-		
+		<!--
+  Iniciamos el manejo de los elementos hijo en la secuencia 
+-->
 		<xsl:for-each select="./pago10:Pago">
 			<xsl:apply-templates select="."/>
 		</xsl:for-each>
