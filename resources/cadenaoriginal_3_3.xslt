@@ -389,9 +389,7 @@
 		<xsl:call-template name="Opcional">
 			<xsl:with-param name="valor" select="./@SelloPago"/>
 		</xsl:call-template>
-		<!--
-  Iniciamos el tratamiento de los atributos de pago10:DocumentoRelacionado
--->
+		<!-- Iniciamos el tratamiento de los atributos de pago10:DocumentoRelacionado -->
 		<xsl:for-each select="./pago10:DoctoRelacionado">
 			<xsl:apply-templates select="."/>
 		</xsl:for-each>
