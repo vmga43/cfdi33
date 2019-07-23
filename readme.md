@@ -1,8 +1,5 @@
 ## CFDi33-NodeJS
 
-[![Build Status](https://travis-ci.org/blacktrue/nodejs-cfdiv33.svg?branch=develop)](https://travis-ci.org/blacktrue/nodejs-cfdiv33)
-
-
 Fork de @blacktrue para la generacion de cfdi 3.3, ¡un excelente trabajo! 
 
 En mi version se hicieron correcciones de un par de errores de rutas dinamicas y agregado de complemento de pago 2018. 
