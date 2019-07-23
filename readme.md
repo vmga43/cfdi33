@@ -1,4 +1,4 @@
-## CFDi33-NodeJS
+## CFDi33 para NodeJS
 
 Fork de @blacktrue para la generacion de cfdi 3.3, ¡un excelente trabajo! 
 

@@ -1,7 +1,7 @@
 {
   "author": "Alex Otano",
   "bugs": {
-    "url": "https://github.com/ALEXOTANO/cfdi33-nodejs/issues"
+    "url": "https://github.com/ALEXOTANO/cfdi33/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -19,19 +19,19 @@
     "lib": "lib",
     "test": "test"
   },
-  "homepage": "https://github.com/ALEXOTANO/cfdi33-nodejs#readme",
+  "homepage": "https://github.com/ALEXOTANO/cfdi33#readme",
   "license": "MIT",
   "main": "index.js",
-  "name": "@alexotano/cfdi33-nodejs",
+  "name": "@alexotano/cfdi33",
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ALEXOTANO/cfdi33-nodejs.git"
+    "url": "git+https://github.com/ALEXOTANO/cfdi33.git"
   },
   "scripts": {
     "test": "mocha"
   },
-  "version": "2.2.1",
+  "version": "2.2.2",
   "keywords": [
     "cfdi",
     "version",
