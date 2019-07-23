@@ -7,7 +7,7 @@ En mi version se hicieron correcciones de un par de errores de rutas dinamicas y
 ## Instalación 
 
 ```
-npm i @alexotano/cfdi33-nodejs
+npm i @alexotano/cfdi33
 ```
 
 ## Ejemplo de uso Factura
@@ -15,15 +15,15 @@ npm i @alexotano/cfdi33-nodejs
 ```javascript
 'use strict'
 
-const CFDI = require('@alexotano/cfdi33-nodejs').CFDI
-const Emisor = require('@alexotano/cfdi33-nodejs').Emisor
-const Receptor = require('@alexotano/cfdi33-nodejs').Receptor
-const Concepto = require('@alexotano/cfdi33-nodejs').Concepto
-const CuentaPredial = require('@alexotano/cfdi33-nodejs').CuentaPredial
-const InformacionAduanera = require('@alexotano/cfdi33-nodejs').InformacionAduanera
-const CfdiRelacionado = require('@alexotano/cfdi33-nodejs').CfdiRelacionado
-const Traslado = require('@alexotano/cfdi33-nodejs').Traslado
-const Retencion = require('@alexotano/cfdi33-nodejs').Retencion
+const CFDI = require('@alexotano/cfdi33').CFDI
+const Emisor = require('@alexotano/cfdi33').Emisor
+const Receptor = require('@alexotano/cfdi33').Receptor
+const Concepto = require('@alexotano/cfdi33').Concepto
+const CuentaPredial = require('@alexotano/cfdi33').CuentaPredial
+const InformacionAduanera = require('@alexotano/cfdi33').InformacionAduanera
+const CfdiRelacionado = require('@alexotano/cfdi33').CfdiRelacionado
+const Traslado = require('@alexotano/cfdi33').Traslado
+const Retencion = require('@alexotano/cfdi33').Retencion
 
 const cfdi = new CFDI({
   //'Serie': 'A',
@@ -108,15 +108,15 @@ cfdi.getXml()
 ```javascript
 'use strict'
 
-const CFDI = require('@alexotano/cfdi33-nodejs').CFDI
-const Emisor = require('@alexotano/cfdi33-nodejs').Emisor
-const Receptor = require('@alexotano/cfdi33-nodejs').Receptor
-const Concepto = require('@alexotano/cfdi33-nodejs').Concepto
-const CuentaPredial = require('@alexotano/cfdi33-nodejs').CuentaPredial
-const InformacionAduanera = require('@alexotano/cfdi33-nodejs').InformacionAduanera
-const CfdiRelacionado = require('@alexotano/cfdi33-nodejs').CfdiRelacionado
-const Traslado = require('@alexotano/cfdi33-nodejs').Traslado
-const Retencion = require('@alexotano/cfdi33-nodejs').Retencion
+const CFDI = require('@alexotano/cfdi33').CFDI
+const Emisor = require('@alexotano/cfdi33').Emisor
+const Receptor = require('@alexotano/cfdi33').Receptor
+const Concepto = require('@alexotano/cfdi33').Concepto
+const CuentaPredial = require('@alexotano/cfdi33').CuentaPredial
+const InformacionAduanera = require('@alexotano/cfdi33').InformacionAduanera
+const CfdiRelacionado = require('@alexotano/cfdi33').CfdiRelacionado
+const Traslado = require('@alexotano/cfdi33').Traslado
+const Retencion = require('@alexotano/cfdi33').Retencion
 
 const cfdi = new CFDI({
   //'Serie': 'A',
