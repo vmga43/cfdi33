@@ -41,8 +41,8 @@ const cfdi = new CFDI({
   'LugarExpedicion': '45079',
 });
 
-cfdi.cer = './test/resources/LAN7008173R5.cer.pem'
-cfdi.key = './test/resources/LAN7008173R5.key.pem'
+cfdi.cer = './test/resources/XXXXXXXXXXXX.cer.pem'
+cfdi.key = './test/resources/XXXXXXXXXXXX.key.pem'
 cfdi.withOutCerts = false
 
 /*
@@ -53,16 +53,15 @@ cfdi.add(new CfdiRelacionado({
 }))
 */
 
-
 cfdi.add(new Emisor({
-  'Rfc': 'LAN7008173R5',
-  'Nombre': 'CESAR RENE AGUILERA ARREOLA',
+  'Rfc': 'XXXXXXXX',
+  'Nombre': 'NOMBRE APELLIDO',
   'RegimenFiscal': '601'
 }))
 
 cfdi.add(new Receptor({
-  'Rfc': 'HEPR930322977',
-  //'Nombre': 'RAFAEL ALEJANDRO HERNÁNDEZ PALACIOS',
+  'Rfc': 'ZZZZZZZZZZZ',
+  //'Nombre': 'NOMBRE APELLIDO',
   //'ResidenciaFiscal': 'MEX',
   //'NumRegIdTrib': '0000000000000',
   'UsoCFDI': 'G01'
@@ -171,7 +170,7 @@ let complemento = new Complemento()
 
 let comprobante = {
   IdDocumento: 'A39DA66B-52CA-49E3-879B-OTROCFDI##',
-  MonedaDR: 'MXN,
+  MonedaDR: 'MXN',
   MetodoDePagoDR: 'PPD',
   NumParcialidad: '1',
   ImpSaldoAnt: 200,
