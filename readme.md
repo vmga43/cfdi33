@@ -1,4 +1,4 @@
-## cfdiv33
+## CFDi33-NodeJS
 
 [![Build Status](https://travis-ci.org/blacktrue/nodejs-cfdiv33.svg?branch=develop)](https://travis-ci.org/blacktrue/nodejs-cfdiv33)
 
