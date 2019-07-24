@@ -10,7 +10,7 @@ const Retencion = require('./lib/Node/Impuesto/Retencion');
 const CuentaPredial = require('./lib/Node/CuentaPredial');
 const InformacionAduanera = require('./lib/Node/InformacionAduanera');
 const Parte = require('./lib/Node/Parte');
-const Pago = require('cfdiv33/lib/Node/Pago');
+const Pago = require('./lib/Node/Pago');
 const Complemento = require('./lib/Node/Complemento');
 
 module.exports = {
