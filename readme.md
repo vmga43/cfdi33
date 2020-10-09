@@ -118,13 +118,11 @@ const CfdiRelacionado = require('@alexotano/cfdi33').CfdiRelacionado
 const Traslado = require('@alexotano/cfdi33').Traslado
 const Retencion = require('@alexotano/cfdi33').Retencion
 
-const cfdi = new CFDI({
-  //'Serie': 'A',
-  //'Folio': '167ABC',
+const pago = new CFDIPago({
   'Fecha': '2018-06-11T08:09:23',
   'NoCertificado': '20001000000300022815',
   'SubTotal': '1000',
-  'Moneda': 'MXN',
+  'Moneda': 'XXX', // La moneda se declara por comprobante
   'Total': '1160',
   'TipoDeComprobante': 'P',
   'FormaPago': '01',
@@ -134,21 +132,18 @@ const cfdi = new CFDI({
   'LugarExpedicion': '45079',
 });
 
-cfdi.cer = './test/resources/LAN7008173R5.cer.pem'
-cfdi.key = './test/resources/LAN7008173R5.key.pem'
-cfdi.withOutCerts = false
+pago.cer = './test/resources/LAN7008173R5.cer.pem'
+pago.key = './test/resources/LAN7008173R5.key.pem'
+pago.withOutCerts = false
 
-cfdi.add(new Emisor({
+pago.add(new Emisor({
   'Rfc': 'LAN7008173R5',
   'Nombre': 'CESAR RENE AGUILERA ARREOLA',
   'RegimenFiscal': '601'
 }))
 
-cfdi.add(new Receptor({
+pago.add(new Receptor({
   'Rfc': 'HEPR930322977',
-  //'Nombre': 'RAFAEL ALEJANDRO HERNÁNDEZ PALACIOS',
-  //'ResidenciaFiscal': 'MEX',
-  //'NumRegIdTrib': '0000000000000',
   'UsoCFDI': 'G01'
 }))
 
@@ -161,7 +156,7 @@ const concepto = new Concepto({
   'Importe': 0
 })
 		
-cfdi.add(concepto)
+pago.add(concepto)
 
 let complemento = new Complemento()
 
@@ -192,9 +187,9 @@ complemento.add(new Pago(comprobante, pago, version))
 //------------------
 
 
-cfdi.add(complemento)
+pago.add(complemento)
 
-cfdi.getXml()
+pago.getXml()
 .then(xml => console.log(xml))
 .catch(e => console.log(e.toString(), '---> error'));
 
