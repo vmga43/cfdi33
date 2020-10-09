@@ -31,13 +31,14 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "2.2.6",
+  "version": "2.3",
   "keywords": [
     "cfdi",
     "version",
     "3.3",
     "XML",
     "facturacion",
+    "complementos pago",
     "electronica",
     "mexico"
   ]
