@@ -1,6 +1,7 @@
 'use strict'
 
 const CFDI = require('./lib/CFDI');
+const CFDIPago = require('./lib/CFDI-pago');
 const Emisor = require('./lib/Node/Emisor');
 const Receptor = require('./lib/Node/Receptor');
 const Concepto = require('./lib/Node/Concepto');
@@ -15,6 +16,7 @@ const Complemento = require('./lib/Node/Complemento');
 
 module.exports = {
   CFDI,
+  CFDIPago,
   Emisor,
   Receptor,
   Concepto,
