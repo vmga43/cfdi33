@@ -1,13 +1,11 @@
 ## CFDi33 para NodeJS
 
-Fork de @blacktrue para la generacion de cfdi 3.3, ¡un excelente trabajo! 
-
-En mi version se hicieron correcciones de un par de errores de rutas dinamicas y agregado de complemento de pago 2018. 
+Fork de @blacktrue / @alexotano  para la generacion de cfdi 3.3, ¡un excelente trabajo! 
 
 ## Instalación 
 
 ```
-npm i @alexotano/cfdi33
+npm i @vmga43/cfdi33
 ```
 
 ## Ejemplo de uso Factura
@@ -15,15 +13,15 @@ npm i @alexotano/cfdi33
 ```javascript
 'use strict'
 
-const CFDI = require('@alexotano/cfdi33').CFDI
-const Emisor = require('@alexotano/cfdi33').Emisor
-const Receptor = require('@alexotano/cfdi33').Receptor
-const Concepto = require('@alexotano/cfdi33').Concepto
-const CuentaPredial = require('@alexotano/cfdi33').CuentaPredial
-const InformacionAduanera = require('@alexotano/cfdi33').InformacionAduanera
-const CfdiRelacionado = require('@alexotano/cfdi33').CfdiRelacionado
-const Traslado = require('@alexotano/cfdi33').Traslado
-const Retencion = require('@alexotano/cfdi33').Retencion
+const CFDI = require('@vmga43/cfdi33').CFDI
+const Emisor = require('@vmga43/cfdi33').Emisor
+const Receptor = require('@vmga43/cfdi33').Receptor
+const Concepto = require('@vmga43/cfdi33').Concepto
+const CuentaPredial = require('@vmga43/cfdi33').CuentaPredial
+const InformacionAduanera = require('@vmga43/cfdi33').InformacionAduanera
+const CfdiRelacionado = require('@vmga43/cfdi33').CfdiRelacionado
+const Traslado = require('@vmga43/cfdi33').Traslado
+const Retencion = require('@vmga43/cfdi33').Retencion
 
 const cfdi = new CFDI({
   //'Serie': 'A',
@@ -108,15 +106,15 @@ cfdi.getXml()
 ```javascript
 'use strict'
 
-const CFDI = require('@alexotano/cfdi33').CFDI
-const Emisor = require('@alexotano/cfdi33').Emisor
-const Receptor = require('@alexotano/cfdi33').Receptor
-const Concepto = require('@alexotano/cfdi33').Concepto
-const CuentaPredial = require('@alexotano/cfdi33').CuentaPredial
-const InformacionAduanera = require('@alexotano/cfdi33').InformacionAduanera
-const CfdiRelacionado = require('@alexotano/cfdi33').CfdiRelacionado
-const Traslado = require('@alexotano/cfdi33').Traslado
-const Retencion = require('@alexotano/cfdi33').Retencion
+const CFDI = require('@vmga43/cfdi33').CFDI
+const Emisor = require('@vmga43/cfdi33').Emisor
+const Receptor = require('@vmga43/cfdi33').Receptor
+const Concepto = require('@vmga43/cfdi33').Concepto
+const CuentaPredial = require('@vmga43/cfdi33').CuentaPredial
+const InformacionAduanera = require('@vmga43/cfdi33').InformacionAduanera
+const CfdiRelacionado = require('@vmga43/cfdi33').CfdiRelacionado
+const Traslado = require('@vmga43/cfdi33').Traslado
+const Retencion = require('@vmga43/cfdi33').Retencion
 
 const pago = new CFDIPago({
   'Fecha': '2018-06-11T08:09:23',
