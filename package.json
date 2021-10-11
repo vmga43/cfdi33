@@ -1,12 +1,13 @@
 {
-  "author": "Alex Otano",
+  "author": "Victor Garcia",
   "bugs": {
-    "url": "https://github.com/ALEXOTANO/cfdi33/issues"
+    "url": "https://github.com/vmga43/cfdi33/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
     "crypto": "^1.0.1",
     "jxon": "^2.0.0-beta.5",
+    "simply-beautiful": "^0.2.10",
     "xsltproc": "^0.0.3"
   },
   "deprecated": false,
@@ -19,19 +20,19 @@
     "lib": "lib",
     "test": "test"
   },
-  "homepage": "https://github.com/ALEXOTANO/cfdi33#readme",
+  "homepage": "https://github.com/vmga43/cfdi33#readme",
   "license": "MIT",
   "main": "index.js",
-  "name": "@alexotano/cfdi33",
+  "name": "@vmga43/cfdi33",
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ALEXOTANO/cfdi33.git"
+    "url": "git+https://github.com/vmga43/cfdi33.git"
   },
   "scripts": {
     "test": "mocha"
   },
-  "version": "2.3.2",
+  "version": "2.3.3",
   "keywords": [
     "cfdi",
     "version",

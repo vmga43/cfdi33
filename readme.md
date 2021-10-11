@@ -42,6 +42,7 @@ const cfdi = new CFDI({
 cfdi.cer = './test/resources/XXXXXXXXXXXX.cer.pem'
 cfdi.key = './test/resources/XXXXXXXXXXXX.key.pem'
 cfdi.withOutCerts = false
+cfdi.nomType = 'cfdi' //Tipo de comprobante ('cfdi','pago','nomina')
 
 /*
 cfdi.add(new CfdiRelacionado({
@@ -115,8 +116,10 @@ const InformacionAduanera = require('@vmga43/cfdi33').InformacionAduanera
 const CfdiRelacionado = require('@vmga43/cfdi33').CfdiRelacionado
 const Traslado = require('@vmga43/cfdi33').Traslado
 const Retencion = require('@vmga43/cfdi33').Retencion
+const Pago = require('@vmga43/cfdi33').Pago
+const Complemento = require('@vmga43/cfdi33').Complemento
 
-const pago = new CFDIPago({
+const pago = new CFDI({
   'Fecha': '2018-06-11T08:09:23',
   'NoCertificado': '20001000000300022815',
   'SubTotal': '1000',
@@ -133,6 +136,7 @@ const pago = new CFDIPago({
 pago.cer = './test/resources/LAN7008173R5.cer.pem'
 pago.key = './test/resources/LAN7008173R5.key.pem'
 pago.withOutCerts = false
+cfdi.nomType = 'pago' //Tipo de comprobante ('cfdi','pago','nomina')
 
 pago.add(new Emisor({
   'Rfc': 'LAN7008173R5',
